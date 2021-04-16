@@ -1,0 +1,5 @@
+Django==3.1.5 
+django-neomodel==0.0.6
+neo4j-driver==4.1.1
+neomodel==4.0.2
+djangorestframework==3.12.2
