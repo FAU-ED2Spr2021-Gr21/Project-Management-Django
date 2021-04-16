@@ -26,7 +26,7 @@ Now, you can add the necessary dependencies to the project. This can be done by 
 
 The key dependencies are also listed below and can be installed individually by running `pip install <name>==<version>`:
 ```
-Django==3.1.5 
+Django==3.1.8 
 django-neomodel==0.0.6
 neo4j-driver==4.1.1
 neomodel==4.0.2
@@ -37,15 +37,17 @@ Now that the application is up and running, you need to connect to the database.
 
 To load the database:
 
- 1. Create a new project (or use the existing default project)
- 2. Add a local DMBS, making sure to remember the password
- 3. Click the three dots next to your newly created DBMS and open up the terminal
- 4. Change to the `bin` directory using `cd bin`
- 5. Load the database from the dump file by running `neo4j-admin load --from C:\path\to\projdata.dump` 
+ 1. Download the dump file from https://drive.google.com/file/d/1NB29_JRyXT2QSpN5LEM0Cww9QIgPWLyd/view?usp=sharing
+ 2. Create a new project (or use the existing default project)
+ 3. Add a local DMBS, making sure to remember the password
+ 4. Click the three dots next to your newly created DBMS and open up the terminal
+ 5. Change to the `bin` directory using `cd bin`
+ 6. Load the database from the dump file by running `neo4j-admin load --from C:\path\to\projdata.dump` 
+ 
 
 Now, you can start the DBMS. To connect the database to the application, open up DJangoBackend\settings.py. Find the part that says `config.DATABASE_URL` and change it so that it looks like `config.DATABASE_URL = 'bolt://neo4j:<password>@localhost:7687'`. 
 
-Once this is done, go back to the command line and use `python manage.py runserver` to run the development server to see the application. 
+Once this is done, go back to the command line and use `python manage.py runserver` to run the development server. If everything was done correctly, you should be able to go to http://127.0.0.1:8000/ to see the application. 
 
 ## Application Features
 
