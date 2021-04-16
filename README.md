@@ -53,13 +53,13 @@ Once this is done, go back to the command line and use `python manage.py runserv
 
 Right now, the application has a basic proof-of-concept feature that allows you to search by story title (full or partial). This search will return a page that contains the first item in the list of potential matching results. 
 
-![Main Search Page](https://github.com/FAU-ED2Spr2021-Gr21/Project-Management-Django/blob/main/main_search.png "Main Search Page")
+![Main Search Page](https://github.com/FAU-ED2Spr2021-Gr21/Project-Management-Django/blob/main/imgs/main_search.png "Main Search Page")
 _________
 
-![Search Results](https://github.com/FAU-ED2Spr2021-Gr21/Project-Management-Django/blob/main/searchresults.png "Search Results")
+![Search Results](https://github.com/FAU-ED2Spr2021-Gr21/Project-Management-Django/blob/main/imgs/searchresults.png "Search Results")
 _________
 
-![Example Graph](https://github.com/FAU-ED2Spr2021-Gr21/Project-Management-Django/blob/main/domain_model.png "Example Graph")
+![Example Graph](https://github.com/FAU-ED2Spr2021-Gr21/Project-Management-Django/blob/main/imgs/domain_model.png "Example Graph")
 _________
 
 Of course, this proof-of-concept is not necessarily a reflection of the final product. Future feature updates will include adding more search functionality, displaying related stories, and improving the user interface. 
