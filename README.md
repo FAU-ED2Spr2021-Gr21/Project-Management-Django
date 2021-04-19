@@ -26,7 +26,8 @@ Now, you can add the necessary dependencies to the project. This can be done by 
 
 The key dependencies are also listed below and can be installed individually by running `pip install <name>==<version>`:
 ```
-Django==3.1.8 
+Django==3.1.8
+gunicorn==20.0.4
 django-neomodel==0.0.6
 neo4j-driver==4.1.1
 neomodel==4.0.2
