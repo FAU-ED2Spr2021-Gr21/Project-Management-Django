@@ -1,1 +1,1 @@
-web: cd DJangoBackend && gunicorn DJangoBackend.wsgi
+web: gunicorn DJangoBackend.wsgi --log-file -
