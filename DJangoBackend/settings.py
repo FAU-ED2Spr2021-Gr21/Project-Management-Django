@@ -45,6 +45,7 @@ INSTALLED_APPS = [
 
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -120,7 +121,7 @@ STATICFILES_DIRS = (
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 from neomodel import config 
-config.DATABASE_URL = 'bolt://neo4j:stories123@localhost:7687'  # for local usage | Password = stories123
+config.DATABASE_URL = 'bolt://neo4j:stories123@127.0.0.1:7687'  # for local usage | Password = stories123
 
 # Rest-Framework settings
 REST_FRAMEWORK = {
