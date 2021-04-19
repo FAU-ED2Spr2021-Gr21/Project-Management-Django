@@ -118,7 +118,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 from neomodel import config 
-config.DATABASE_URL = 'bolt://neo4j:stories123@10.0.0.72:7687'  # for local usage | Password = stories123
+config.DATABASE_URL = 'bolt://neo4j:stories123@192.168.50.227:7687'  # for local usage | Password = stories123
 
 # Rest-Framework settings
 REST_FRAMEWORK = {
