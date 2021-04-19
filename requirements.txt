@@ -1,4 +1,5 @@
-Django==3.1.8 
+Django==3.1.8
+gunicorn==20.0.4
 django-neomodel==0.0.6
 neo4j-driver==4.1.1
 neomodel==4.0.2
