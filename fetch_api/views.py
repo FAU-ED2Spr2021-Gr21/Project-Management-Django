@@ -16,7 +16,10 @@ from .utils import fetch_nodes
 
 class FetchComparisons(APIView):
     def get(self, request):
-        comparison = fetch_comparisons()
+        fetch_compare = {
+            'name': request.GET.get('n', 'Sub Epics'),
+        }
+        comparison = fetch_comparisons(fetch_compare)
         data = {
             'response': {
                 'status': '200',
@@ -69,7 +72,7 @@ class GetNodeData(APIView):
             'value': request.GET.get('v', ''),
             'text': request.GET.get('txt', ''),
             'type': request.GET.get('ty', ''),
-            'limit': 10,
+            'limit': request.GET.get('l', "10"),
             'page': int(request.GET.get('p', 1)),
         }
         nodes = fetch_nodes(fetch_info)

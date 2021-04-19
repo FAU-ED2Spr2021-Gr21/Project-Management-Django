@@ -128,3 +128,6 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.JSONRenderer',
     )
 }
+
+#for Heroku deployment 
+#ALLOWED_HOSTS = ['project-management-django.herokuapp.com', '10.0.0.72']

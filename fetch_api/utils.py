@@ -10,6 +10,7 @@ from .models import Other
 
 from .constants import COMPARISON, NAMES
 
+from neomodel import db 
 
 MODEL_ENTITIES = {
     'Entity': Entity,
@@ -59,7 +60,7 @@ def fetch_nodes(fetch_info):
     text                  = fetch_info['text']
     type                  = fetch_info['type']
 
-    limit           = fetch_info['limit']
+    limit           = int(fetch_info['limit'])
     start           = ((fetch_info['page'] - 1) * limit)
     end             = start + limit
 
@@ -87,5 +88,19 @@ def fetch_node_details(node_info):
 def fetch_names():
     return NAMES
 
-def fetch_comparisons():
-    return COMPARISON
+def fetch_comparisons(node_info):
+    name       = node_info['name']
+
+    comparison = '''match (x)<-[:HAS_ENTITY|:HAS_KEYPHRASE]-(s1:Story)
+    match (x)<-[:HAS_ENTITY|:HAS_KEYPHRASE]-(s2:Story)
+    where s1 <> s2
+    and s1.name = "''' + name + '''" with  s1 as s1, s2 as s2, count(distinct x) as shared, collect(distinct x.text) as stuff
+    order by shared desc
+    return s1.name, collect(s2.name)[0], stuff'''
+
+    comparisons = db.cypher_query(comparison)[0]
+
+    fetched_comparisons   = comparisons[start:end]
+
+    #return fetched_nodes[0] # for shell test
+    return [node.serialize for node in fetched_nodes]
