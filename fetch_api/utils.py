@@ -60,7 +60,7 @@ def fetch_nodes(fetch_info):
     text                  = fetch_info['text']
     type                  = fetch_info['type']
 
-    limit           = fetch_info['limit']
+    limit           = int(fetch_info['limit'])
     start           = ((fetch_info['page'] - 1) * limit)
     end             = start + limit
 
