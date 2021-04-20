@@ -1,4 +1,4 @@
-header {
+.title-info {
     /*background: linear-gradient(#1576F8, #589cf5);*/
     background-color: #1576F8;
 }
@@ -9,4 +9,24 @@ footer {
 
 footer a {
     color: white;
+}
+
+
+.container-fluid {
+    height: 100%;
+    overflow-y: hidden; /* don't show content that exceeds my height */
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+.nopad {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+h1 {
+    font-family: font-family: 'Noto Sans JP', sans-serif;;
 }
