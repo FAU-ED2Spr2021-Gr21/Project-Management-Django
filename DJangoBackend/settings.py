@@ -122,7 +122,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 from neomodel import config 
-config.DATABASE_URL = 'bolt://neo4j:drainers-maintainability-nets@3.87.228.223:7687'  # for Heroku usage | Password = stories123
+config.DATABASE_URL = 'bolt://neo4j:stories123@192.168.50.227:7687'  # for Heroku usage | Password = stories123
 
 # Rest-Framework settings
 REST_FRAMEWORK = {
