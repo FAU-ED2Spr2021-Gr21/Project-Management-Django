@@ -5,4 +5,4 @@ neo4j-driver==4.1.1
 neomodel==4.0.2
 djangorestframework==3.12.2
 pytz==2020.5
-whitenoise==3.3.1
+whitenoise==5.2.0
