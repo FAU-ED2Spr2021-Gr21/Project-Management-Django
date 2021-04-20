@@ -27,6 +27,10 @@ html, body {
     padding-right: 0;
 }
 
+* {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
 h1 {
-    font-family: font-family: 'Noto Sans JP', sans-serif;;
+    font-family: 'PT Sans', sans-serif;
 }
