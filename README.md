@@ -32,6 +32,8 @@ django-neomodel==0.0.6
 neo4j-driver==4.1.1
 neomodel==4.0.2
 djangorestframework==3.12.2
+pytz==2020.5
+whitenoise==5.2.0
 ```
 ### Connect to the Database
 Now that the application is up and running, you need to connect to the database. Running this database locally requires Neo4j Desktop, which you can download [here](https://neo4j.com/download/). 
@@ -48,7 +50,21 @@ To load the database:
 
 Now, you can start the DBMS. To connect the database to the application, open up DJangoBackend\settings.py. Find the part that says `config.DATABASE_URL` and change it so that it looks like `config.DATABASE_URL = 'bolt://neo4j:<password>@localhost:7687'`. 
 
-Once this is done, go back to the command line and use `python manage.py runserver` to run the development server. If everything was done correctly, you should be able to go to http://127.0.0.1:8000/ to see the application. 
+Once this is done, go back to the command line and use `python manage.py runserver` to run the development server. If everything was done correctly, you should be able to go to http://127.0.0.1:8000/ to see the application.
+
+### Deploy on Heroku
+
+Create an sandbox database, make sure to select Empty sandbox. copy the database's username, password, and bolt URL. Upload the .CSV file to the database refer to this website for importing csv https://neo4j.com/developer/guide-import-csv/.
+
+Create a Heroku app, (for example, project-management) Go to the app's settings and add the following config vars: ALLOWED_HOST : project-management.herokuapp.com DATABASE_URL: the credentials from your sandbox database in the following format bolt://user:password@ip:port
+
+Clone the repository and navigate into the directory, add Heroku as a remote, and push to Heroku:
+```
+git clone git@github.com:neo4j-examples/project-management-django.git
+cd project-management-dango
+git remote add heroku https://git.heroku.com/project-management.git
+git push heroku master
+```
 
 ## Application Features
 
