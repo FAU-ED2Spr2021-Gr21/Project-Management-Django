@@ -96,7 +96,7 @@ def fetch_comparisons(node_info):
     where s1 <> s2
     and s1.name = "''' + name + '''" with  s1 as s1, s2 as s2, count(distinct x) as shared, collect(distinct x.text) as stuff
     order by shared desc
-    return collect(s2.name)'''
+    return collect(s2.name)[0], stuff'''
 
     comparisons = db.cypher_query(comparison)[0]
     return comparisons

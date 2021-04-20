@@ -119,7 +119,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 from neomodel import config 
-config.DATABASE_URL = 'bolt://neo4j:drainers-maintainability-nets@3.87.228.223:7687'  # for local usage | Password = stories123
+config.DATABASE_URL = 'bolt://neo4j:drainers-maintainability-nets@3.87.228.223:7687'  # for Heroku usage | Password = stories123
 
 # Rest-Framework settings
 REST_FRAMEWORK = {
@@ -129,4 +129,3 @@ REST_FRAMEWORK = {
 }
 
 #for Heroku deployment 
-#ALLOWED_HOSTS = ['project-management-django.herokuapp.com', '10.0.0.72']
