@@ -21,3 +21,8 @@
   text-decoration: none;
   cursor: pointer;
 }
+
+.title-info {
+  /*background: linear-gradient(#1576F8, #589cf5);*/
+  background-color: #1576F8;
+}
