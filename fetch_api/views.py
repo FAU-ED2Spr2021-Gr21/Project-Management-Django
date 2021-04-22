@@ -6,6 +6,7 @@ from .utils import (
     fetch_node_details,
     fetch_names,
     fetch_comparisons,
+    fetch_key_stories,
 )
 # Create your views here.
 
@@ -25,6 +26,21 @@ class FetchComparisons(APIView):
                 'status': '200',
                 'rows': len(comparison),
                 'data': comparison,
+            },
+        }
+        return Response(data)
+
+class FetchKeyStories(APIView):
+    def get(self, request):
+        fetch_stories = {
+            'name': request.GET.get('n', 'details and verbiage'),
+        }
+        stories = fetch_key_stories(fetch_stories)
+        data = {
+            'response': {
+                'status': '200',
+                'rows': len(stories),
+                'data': stories,
             },
         }
         return Response(data)

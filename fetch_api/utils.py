@@ -97,8 +97,17 @@ def fetch_comparisons(node_info):
     and s1.name = "''' + name + '''" with  s1 as s1, s2 as s2, count(distinct x) as shared, collect(distinct x.text) as stuff
     order by shared desc
     return collect(s2.name)'''
-
+    
     comparisons = db.cypher_query(comparison)[0]
     return comparisons
+
+def fetch_key_stories(node_info):
+    name       = node_info['name']
+
+    story = '''MATCH (k:KeyPhrase)<-[:HAS_KEYPHRASE]-(s:Story)
+    WHERE k.text = "''' + name + '''" RETURN collect(s.name)'''
+    
+    stories = db.cypher_query(story)[0]
+    return stories
 
     

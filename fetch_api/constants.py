@@ -22,4 +22,3 @@ comparisons = db.cypher_query(
 )[0]
 
 COMPARISON = comparisons
-
