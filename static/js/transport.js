@@ -264,7 +264,7 @@ if (Type == "KeyPhrase"){
                 var recommend_display = document.createElement('div');
                 recommend_display.setAttribute("id", "show_recommended" + i);
                 modal_text.appendChild(recommend_display);
-                getComparisons(data.response.data[i].node_properties.name, i);
+                getStories(data.response.data[i].node_properties.text, i);
 
 
                 display_button.addEventListener('click', function(){
@@ -298,6 +298,25 @@ if (Type == "KeyPhrase"){
 
 function getComparisons(name, count){
     $.getJSON( "/fetch/compare", { 'n': name } )
+            .done(function( data ) {
+                var workspace_results = document.getElementById("show_recommended" + count);
+                for (i = 0; i < data.response.data[0][0].length; i++){
+                    var recommend_display = document.createElement('div');
+                    var recommend = document.createElement('p');
+                    var temp = data.response.data[0][0][i];
+                    recommend.append("-" + temp);
+                    recommend_display.append(recommend);
+                    workspace_results.append(recommend_display);    
+                }
+            })
+            .fail(function( jqxhr, textStatus, error ) {
+                var err = textStatus + ", " + error;
+                console.log( "Request Failed: " + err );
+            });
+}
+
+function getStories(name, count){
+     $.getJSON( "/fetch/keystories", { 'n': name } )
             .done(function( data ) {
                 var workspace_results = document.getElementById("show_recommended" + count);
                 for (i = 0; i < data.response.data[0][0].length; i++){
