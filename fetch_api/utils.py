@@ -101,4 +101,13 @@ def fetch_comparisons(node_info):
     comparisons = db.cypher_query(comparison)[0]
     return comparisons
 
+def fetch_key_stories(node_info):
+    name       = node_info['name']
+
+    story = '''MATCH (k:KeyPhrase)<-[:HAS_KEYPHRASE]-(s:Story)
+    WHERE k.text = "''' + name + '''" RETURN collect(s.name)'''
+    
+    stories = db.cypher_query(story)[0]
+    return stories
+
     
