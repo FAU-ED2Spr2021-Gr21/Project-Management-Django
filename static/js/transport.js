@@ -106,10 +106,22 @@ if (Type == "Story"){
 
                 var modal_body = document.createElement('div');
                 modal_body.setAttribute("class", "modal-body");
-
+                
+                
                 var modal_text = document.createElement('p');
+                text = document.createTextNode("-" + data.response.data[i].node_properties.value);
+                modal_text.appendChild(text);
+                
+                var br = document.createElement('br');
+                modal_text.appendChild(br);
+                
                 text = document.createTextNode("Notes - " + data.response.data[i].node_properties.notes);
                 modal_text.appendChild(text);
+                
+                var br = document.createElement('br');
+                modal_text.appendChild(br);
+                var br = document.createElement('br');
+                modal_text.appendChild(br);
                 // var br = document.createElement('br');
                 // modal_text.appendChild(br);
                 // var br = document.createElement('br');
