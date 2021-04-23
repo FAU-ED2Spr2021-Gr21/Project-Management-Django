@@ -26,6 +26,8 @@ def filter_nodes(node_type, name, notes, value, text, type):
 
     if node_type.__name__ == 'Story':
         node_set.filter(notes__icontains=notes)
+        name = name.replace("+"," ")
+        print(name)
         node_set.filter(name__icontains=name)
         node_set.filter(value__icontains=value)
 
