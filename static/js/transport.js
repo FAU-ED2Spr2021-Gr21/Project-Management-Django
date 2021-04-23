@@ -18,7 +18,6 @@ if (Type == "Story"){
     $.getJSON( "/fetch/nodes", { 't': Type , 'n': Specify } )
     .done(function( data ) {
         var workspace_results = document.getElementById("display");
-        console.log(Type);
         if (data.response.rows == 0) {
             var output = document.createElement('p');
             var text = document.createTextNode("No results found");
@@ -314,9 +313,10 @@ function getComparisons(name, count){
                 var workspace_results = document.getElementById("show_recommended" + count);
                 for (i = 0; i < data.response.data[0][0].length; i++){
                     var recommend_display = document.createElement('div');
-                    var recommend = document.createElement('p');
+                    var recommend = document.createElement('a');
                     var temp = data.response.data[0][0][i];
                     recommend.append("-" + temp);
+                    recommend.setAttribute('href', "results.html?t=Story&term=" + temp);
                     recommend_display.append(recommend);
                     workspace_results.append(recommend_display);    
                 }
@@ -333,9 +333,10 @@ function getStories(name, count){
                 var workspace_results = document.getElementById("show_recommended" + count);
                 for (i = 0; i < data.response.data[0][0].length; i++){
                     var recommend_display = document.createElement('div');
-                    var recommend = document.createElement('p');
+                    var recommend = document.createElement('a');
                     var temp = data.response.data[0][0][i];
                     recommend.append("-" + temp);
+                    recommend.setAttribute('href', "results.html?t=Story&term=" + temp);
                     recommend_display.append(recommend);
                     workspace_results.append(recommend_display);    
                 }
