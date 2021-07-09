@@ -4,8 +4,9 @@ from neomodel import (
     RelationshipFrom
 )
 
+
 class Date(StructuredNode):
-    id                                 = StringProperty(index = True)
-    text                               = StringProperty()
-    type                               = StringProperty()
-    entity                             = RelationshipFrom('.entity.Entity', 'HAS_ENTITY')
+    id = StringProperty(index=True)
+    text = StringProperty()
+    type = StringProperty()
+    entity = RelationshipFrom('.entity.Entity', 'HAS_ENTITY')

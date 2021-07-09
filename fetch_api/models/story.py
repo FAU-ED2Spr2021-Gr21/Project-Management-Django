@@ -6,18 +6,19 @@ from neomodel import (
 
 from .nodeutils import NodeUtils
 
+
 class Story(StructuredNode, NodeUtils):
-    nodeID                           = StringProperty(index = True )
-    sentimentScore                     = StringProperty()
-    sentiment                          = StringProperty()
-    notes                              = StringProperty()
-    name                               = StringProperty()
-    value                              = StringProperty()
-    acceptance_criteria                = StringProperty()
-    keyphrase                          = RelationshipTo('.keyphrase.KeyPhrase', 'HAS_KEYPHRASE')
-    entity                             = RelationshipTo('.entity.Entity', 'HAS_ENTITY')
-    actor                              = RelationshipTo('.actor.Actor', 'HAS_ACTOR')
-    platform                           = RelationshipTo('.platform.Platform', 'HAS_PLATFORM')
+    nodeID = StringProperty(index=True)
+    sentimentScore = StringProperty()
+    sentiment = StringProperty()
+    notes = StringProperty()
+    name = StringProperty()
+    value = StringProperty()
+    acceptance_criteria = StringProperty()
+    keyphrase = RelationshipTo('.keyphrase.KeyPhrase', 'HAS_KEYPHRASE')
+    entity = RelationshipTo('.entity.Entity', 'HAS_ENTITY')
+    actor = RelationshipTo('.actor.Actor', 'HAS_ACTOR')
+    platform = RelationshipTo('.platform.Platform', 'HAS_PLATFORM')
 
     @property
     def serialize(self):
@@ -32,6 +33,7 @@ class Story(StructuredNode, NodeUtils):
                 'acceptance_criteria': self.acceptance_criteria,
             },
         }
+
     @property
     def serialize_connections(self):
         return [
@@ -52,5 +54,3 @@ class Story(StructuredNode, NodeUtils):
                 'nodes_related': self.serialize_relationships(self.platform.all()),
             },
         ]
-
-

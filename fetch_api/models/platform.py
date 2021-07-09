@@ -4,7 +4,8 @@ from neomodel import (
     Relationship
 )
 
+
 class Platform(StructuredNode):
-    id                                 = StringProperty(index = True)
-    name                               = StringProperty()
-    entity                             = Relationship('.entity.Entity', 'HAS_ENTITY')
+    id = StringProperty(index=True)
+    name = StringProperty()
+    entity = Relationship('.entity.Entity', 'HAS_ENTITY')

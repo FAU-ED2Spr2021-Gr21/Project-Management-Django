@@ -6,11 +6,12 @@ from neomodel import (
 
 from .nodeutils import NodeUtils
 
+
 class Entity(StructuredNode, NodeUtils):
-    id                                 = StringProperty(index = True)
-    text                               = StringProperty()
-    type                               = StringProperty()
-    entity                             = RelationshipFrom('.entity.Entity', 'HAS_ENTITY')
+    id = StringProperty(index=True)
+    text = StringProperty()
+    type = StringProperty()
+    entity = RelationshipFrom('.entity.Entity', 'HAS_ENTITY')
 
     @property
     def serialize(self):
@@ -21,7 +22,7 @@ class Entity(StructuredNode, NodeUtils):
                 'type': self.type,
             },
         }
-    
+
     @property
     def serialize_connections(self):
         return [
@@ -30,12 +31,13 @@ class Entity(StructuredNode, NodeUtils):
                 'nodes_related': self.serialize_relationships(self.entity.all()),
             },
         ]
+
 
 class Quantity(Entity):
-    identity                           = StringProperty(index = True)
-    text                               = StringProperty()
-    type                               = StringProperty()
-    entity                             = RelationshipFrom('.entity.Entity', 'HAS_ENTITY')
+    identity = StringProperty(index=True)
+    text = StringProperty()
+    type = StringProperty()
+    entity = RelationshipFrom('.entity.Entity', 'HAS_ENTITY')
 
     @property
     def serialize(self):
@@ -46,7 +48,7 @@ class Quantity(Entity):
                 'type': self.type,
             },
         }
-    
+
     @property
     def serialize_connections(self):
         return [
@@ -55,12 +57,13 @@ class Quantity(Entity):
                 'nodes_related': self.serialize_relationships(self.entity.all()),
             },
         ]
+
 
 class Other(Entity):
-    identity                           = StringProperty(index = True)
-    text                               = StringProperty()
-    type                               = StringProperty()
-    entity                             = RelationshipFrom('.entity.Entity', 'HAS_ENTITY')
+    identity = StringProperty(index=True)
+    text = StringProperty()
+    type = StringProperty()
+    entity = RelationshipFrom('.entity.Entity', 'HAS_ENTITY')
 
     @property
     def serialize(self):
@@ -71,7 +74,7 @@ class Other(Entity):
                 'type': self.type,
             },
         }
-    
+
     @property
     def serialize_connections(self):
         return [
@@ -80,12 +83,13 @@ class Other(Entity):
                 'nodes_related': self.serialize_relationships(self.entity.all()),
             },
         ]
+
 
 class Person(Entity):
-    id                                 = StringProperty(index = True)
-    text                               = StringProperty()
-    type                               = StringProperty()
-    entity                             = RelationshipFrom('.entity.Entity', 'HAS_ENTITY')
+    id = StringProperty(index=True)
+    text = StringProperty()
+    type = StringProperty()
+    entity = RelationshipFrom('.entity.Entity', 'HAS_ENTITY')
 
     @property
     def serialize(self):
@@ -96,7 +100,7 @@ class Person(Entity):
                 'type': self.type,
             },
         }
-    
+
     @property
     def serialize_connections(self):
         return [
@@ -105,6 +109,3 @@ class Person(Entity):
                 'nodes_related': self.serialize_relationships(self.entity.all()),
             },
         ]
-
-
-

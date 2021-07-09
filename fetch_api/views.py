@@ -15,6 +15,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from .utils import fetch_nodes
 
+
 class FetchComparisons(APIView):
     def get(self, request):
         fetch_compare = {
@@ -29,6 +30,7 @@ class FetchComparisons(APIView):
             },
         }
         return Response(data)
+
 
 class FetchKeyStories(APIView):
     def get(self, request):
@@ -45,6 +47,7 @@ class FetchKeyStories(APIView):
         }
         return Response(data)
 
+
 class FetchNames(APIView):
     def get(self, request):
         names = fetch_names()
@@ -56,6 +59,7 @@ class FetchNames(APIView):
             },
         }
         return Response(data)
+
 
 class GetNodesCount(APIView):
     def get(self, request):
