@@ -56,7 +56,7 @@ ROOT_URLCONF = 'DJangoBackend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'DJangoBackend\\templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'DJangoBackend', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -115,7 +115,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 from neomodel import config
 
-config.DATABASE_URL = 'bolt://neo4j:stories123@localhost:7687'  # for local usage | Password = stories123
+config.DATABASE_URL = 'bolt://neo4j:j13878897@localhost:7687'  # for local usage | Password = stories123
 
 # Rest-Framework settings
 REST_FRAMEWORK = {

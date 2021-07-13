@@ -5,4 +5,4 @@ class FetchApiConfig(AppConfig):
     name = 'fetch_api'
 
     def ready(self):
-        from DJangoBackend.DJangoBackend import constants
+        from fetch_api import constants

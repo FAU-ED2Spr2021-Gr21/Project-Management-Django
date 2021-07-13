@@ -1,5 +1,5 @@
 Django==3.2.5
 django-neomodel==0.0.7
-neo4j-driver==4.3.2
+neo4j-driver==4.3.1
 neomodel==4.0.4
 djangorestframework==3.12.4
