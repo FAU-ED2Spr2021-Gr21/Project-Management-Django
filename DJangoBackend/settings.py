@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 from pathlib import Path
 
+from neomodel import config
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -113,9 +115,13 @@ STATICFILES_DIRS = (
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-from neomodel import config
+username = 'neo4j'
+password = 'bt13roj4NsiBPWGR6-HXrydL9jcfZ307Rz1zcEbEHag'
+server = '6d84cddb.databases.neo4j.io'
+port = '7687'
 
-config.DATABASE_URL = 'bolt://neo4j:j13878897@localhost:7687'  # for local usage | Password = stories123
+config.ENCRYPTED = True
+config.DATABASE_URL = f'bolt://{username}:{password}@{server}:{port}'
 
 # Rest-Framework settings
 REST_FRAMEWORK = {
