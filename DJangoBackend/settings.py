@@ -123,6 +123,12 @@ port = '7687'
 config.ENCRYPTED = True
 config.DATABASE_URL = f'bolt://{username}:{password}@{server}:{port}'
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'sqlite.db'
+    }
+}
 # Rest-Framework settings
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': (
