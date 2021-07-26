@@ -1,3 +1,5 @@
+
+<!------ Include the above in your HEAD tag ---------->
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -6,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="description" content=""/>
     <meta name="author" content=""/>
-    <title>Project Management with Django</title>
+    <title>Project Management </title>
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico"/>
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
@@ -20,54 +22,59 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet"/>
     <link href="{% static 'css/styles.css' %}" rel="stylesheet"/>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
-<body id="page-top">
 
-<div class="container-fluid">
-    <div class="row justify-content-center align-items-start title-info mb-5">
-        <div class="mx-auto text-center mt-5">
-            <h1 class="mx-auto my-0 text-uppercase text-white">Project Management with Django</h1>
-            <p class="mx-auto mt-2 mb-5 text-white">A recommendation engine for project management data that uses Neo4j
-                and Django</p>
-        </div>
-    </div>
-    <div class="row justify-content-center align-items-center">
-        <div class="mx-auto text-center p-5">
-            <form class="row form-inline d-flex" action="results.html" method="GET">
-                <div class="col-md-3 nopad">
-                    <select name="t" id="key" class="form-select">
-                        <option value="Story">Story</option>
-                        <option value="KeyPhrase">Keyphrase</option>
-                    </select>
+<body class="container register">
+                <div class="row">
+                    <div class="col-md-3 register-left">
+                        <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+                        <h3>Welcome!</h3>
+                        <p>This is a Project Management App!</p>
+                        <p>Find out the Optimal Path to your Project!</p>
+                    </div>
+                    <div class="col-md-9 register-right">
+                        
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <h3 class="register-heading">Fill out the information below!</h3>
+                                <div class="row register-form">
+                                    
+                                    <div class="col-md-6">
+                                        <div class="explain">
+                                            <p>.</p>
+                                            <p style="text-align:center"><u>Welcome to the Project Management App!</u></p>
+                                            <p style="text-align:center">This application runs on a Django framework 
+                                                and will be able to find the most optimal path through the use of Ai. Once complete you will have the 
+                                                opportunity to view the suggestion in graph form.</p>
+                                            <p>.</p>
+                                                
+                                            
+                                        </div>
+                                    </div>
+                                   <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" id="Date"class="form-control" placeholder="How long do you have?" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" id="StoryCount" class="form-control" placeholder="How many stories?" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" id="PeopleNum" class="form-control" placeholder="How many people?" value="" />
+                                    </div>
+                                    <a href="results.html">
+                                    <input type="submit" class="btnRegister"  value="Suggest!"/>
+                                    </a> 
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-7 nopad">
-                    <input class="form-control" id="inputKeyword" name="term" placeholder="Enter your search terms"/>
-                </div>
-                <div class="col-md-2 nopad">
-                    <button class="btn btn-primary mx-auto form-control" type="submit">Search</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-<div class="row justify-content-center align-items-end">
-    <!-- Footer-->
-    <footer class="footer text-center fixed-bottom p-2 text-white">
-        <a href="https://github.com/FAU-ED2Spr2021-Gr21/Project-Management-Django">
-            <div class="container">GitHub</div>
-        </a>
-    </footer>
-</div>
 
-
-<!-- Bootstrap core JS-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Third party plugin JS-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-<!-- Core theme JS-->
-
-<script src="{% static 'js\scripts.js' %}"></script>
-<script src="{% static 'js\transport.js' %}"></script>
-</body>
-</html>
+            </body>
+     
