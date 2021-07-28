@@ -1,9 +1,25 @@
+from django.shortcuts import render, redirect, reverse
+from fetch_api.forms import SprintForm
 
-def sprint_request_view(request):
-    pass
+from fetch_api.models import Story
 
-def sprint_response_view(request):
-    pass
 
-def diagram_response_view(request):
-    pass
+def index(request):
+    context = {'form': SprintForm()}
+    return render(request, 'sprint/index.html', context=context)
+
+
+def results(request):
+    if request.method == "POST":
+        form = SprintForm(request.POST)
+        if form.is_valid():
+            stories = Story.nodes.all()[0:form.cleaned_data['num_stories']]
+            return render(request, 'sprint/results.html', context={'stories': stories})
+        else:
+            return render(request, 'sprint/index.html', context={'form': form})
+    else:
+        return redirect(to='fetch_api:index')
+
+
+def graph(request):
+    return redirect(to='fetch_api:index')

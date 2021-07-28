@@ -39,24 +39,20 @@
                             </div>
                         </div>
                         <div class="col-md-6">
+                            <form action="{% url 'fetch_api:results' %}" method="post">
+                                {{ form.errors }}
+                                {% csrf_token %}
                             <div class="form-group">
-                                <input type="text" id="Date" class="form-control"
-                                       placeholder="How long do you have?"
-                                       value=""/>
+                                {{ form.duration }}
                             </div>
                             <div class="form-group">
-                                <input type="text" id="StoryCount" class="form-control"
-                                       placeholder="How many stories?"
-                                       value=""/>
+                                {{ form.num_stories }}
                             </div>
                             <div class="form-group">
-                                <input type="text" id="PeopleNum" class="form-control"
-                                       placeholder="How many people?"
-                                       value=""/>
+                                {{ form.actors }}
                             </div>
-                            <a href="{% url 'results' %}">
-                                <input type="submit" class="btnRegister" value="Suggest!"/>
-                            </a>
+                            <input type="submit" class="btnRegister" value="Suggest!"/>
+                            </form>
                         </div>
 
                     </div>

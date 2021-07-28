@@ -32,20 +32,23 @@
 
                         <div class="explain">
                             <span style="display:inline-block;"></span>
-                            <p style="float: left; margin-left: 6%;">Results go here:</p>
+                            <ul>
+                            {% for story in stories %}
+                                <li>{{ story.name }}</li>
+                            {% endfor %}
+                            </ul>
                         </div>
 
                     </div>
                     <!--This will take you to the Graph html so change the href-->
-                    <a href="results.html">
+                    <a href="{% url 'fetch_api:graph' %}">
                         <input type="button" style="float:right " class="btnRegister" value="Graph"/>
                     </a>
                     <!--Takes u to the previous page using history.
                         For Graph might want to make -1 into -2 to go back to home page and -1 to go back to results-->
-                    <form>
-                        <input type="button" style="float:right" onClick="history.go(-1)" class="btnRegister"
-                               value="Home"/>
-                    </form>
+                    <a href="{% url 'fetch_api:index' %}">
+                        <input type="button" style="float:right" class="btnRegister" value="Home"/>
+                    </a>
 
 
                 </div>
