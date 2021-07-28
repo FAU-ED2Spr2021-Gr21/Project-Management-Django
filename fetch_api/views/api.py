@@ -1,19 +1,16 @@
-from django.shortcuts import render
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
-from .utils import (
+from fetch_api.utils import (
     count_nodes,
-    fetch_nodes,
-    fetch_node_details,
     fetch_names,
     fetch_comparisons,
     fetch_key_stories,
 )
-# Create your views here.
+from fetch_api.utils import fetch_nodes
 
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework import status
-from .utils import fetch_nodes
+
+# Create your views here.
 
 
 class FetchComparisons(APIView):

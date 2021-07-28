@@ -1,4 +1,4 @@
-from neomodel import db 
+from neomodel import db
 
 names = db.cypher_query(
     '''
@@ -7,7 +7,7 @@ names = db.cypher_query(
     '''
 )[0]
 
-NAMES  = names
+NAMES = names
 
 comparisons = db.cypher_query(
     '''
