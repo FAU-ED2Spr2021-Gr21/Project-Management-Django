@@ -18,8 +18,8 @@ from django.contrib import admin
 from django.views.generic.base import TemplateView
 from django.urls import path, include
 
-urlpatterns = [url(r'^$', TemplateView.as_view(template_name='index.html'), name='index'),
+urlpatterns = [url(r'^$', TemplateView.as_view(template_name='sprint/index.html'), name='index'),
                url(r'admin/', admin.site.urls),
-               url(r'^results.html', TemplateView.as_view(template_name='results.html'), name='results'),
+               url(r'^results.html', TemplateView.as_view(template_name='sprint/results.html'), name='results'),
                url(r'^fetch/',
                    include(('fetch_api.urls', 'fetch_api'), namespace='fetch_api'))]
