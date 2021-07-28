@@ -61,6 +61,8 @@ h1 {
   background: #f8f9fa;
   border-top-left-radius: 10% 50%;
   border-bottom-left-radius: 10% 50%;
+  
+  height: auto;
 }
 .register-left img{
   margin-top: 15%;
@@ -124,10 +126,10 @@ h1 {
 }
 .register-right .explain{
   background: #0062cc;
-  
+  padding-left:5%;
   color: white;
-  width:105%;
-  height:300px;
+  width:110%;
+  height: auto; 
   border-top-left-radius: 10% 20%;
   border-bottom-left-radius: 10% 20%;
   border-top-right-radius: 10% 20%;
