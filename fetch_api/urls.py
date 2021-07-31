@@ -1,10 +1,15 @@
 from django.conf.urls import url
-from .views import GetNodesCount, GetNodeData, FetchComparisons, FetchNames, FetchKeyStories
+from django.urls import path
+from .views import GetNodesCount, GetNodeData, FetchComparisons, FetchNames, FetchKeyStories, index, results, graph
 
+app_name = 'fetch_api'
 urlpatterns = [
-    url(r'^count[/]?$', GetNodesCount.as_view(), name='get_nodes_count'),
-    url(r'^nodes[/]?$', GetNodeData.as_view(), name='get_node_data'),
-    url(r'^compare[/]?$', FetchComparisons.as_view(), name='fetch_comparisons'),
-    url(r'^name[/]?$', FetchNames.as_view(), name='fetch_names'),
-    url(r'^keystories[/]?$', FetchKeyStories.as_view(), name='fetch_key_stories'),
+    path('', index, name='index'),
+    path('results', results, name='results'),
+    path('graph', graph, name='graph'),
+    url(r'^fetch/count[/]?$', GetNodesCount.as_view(), name='get_nodes_count'),
+    url(r'^fetch/nodes[/]?$', GetNodeData.as_view(), name='get_node_data'),
+    url(r'^fetch/compare[/]?$', FetchComparisons.as_view(), name='fetch_comparisons'),
+    url(r'^fetch/name[/]?$', FetchNames.as_view(), name='fetch_names'),
+    url(r'^fetch/keystories[/]?$', FetchKeyStories.as_view(), name='fetch_key_stories'),
 ]
