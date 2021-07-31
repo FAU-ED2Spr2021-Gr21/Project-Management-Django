@@ -124,14 +124,13 @@ h1 {
 }
 .register-right .explain{
   background: #0062cc;
-  
   color: white;
   width:105%;
   height:300px;
-  border-top-left-radius: 10% 20%;
-  border-bottom-left-radius: 10% 20%;
-  border-top-right-radius: 10% 20%;
-  border-bottom-right-radius: 10% 20%;
+  /* border-top-left-radius: 10% 20%; */
+  /* border-bottom-left-radius: 10% 20%; */
+  /* border-top-right-radius: 10% 20%; */
+  /* border-bottom-right-radius: 10% 20%; */
 }
 .btnRegister{
   margin-left:5%;
