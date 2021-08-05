@@ -119,14 +119,12 @@ STATICFILES_DIRS = (
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 username = 'neo4j'
-# password = 'bt13roj4NsiBPWGR6-HXrydL9jcfZ307Rz1zcEbEHag'
-password = '0418'
+password = 'bt13roj4NsiBPWGR6-HXrydL9jcfZ307Rz1zcEbEHag'
 server = '6d84cddb.databases.neo4j.io'
 port = '7687'
 
 config.ENCRYPTED = True
-# config.DATABASE_URL = f'bolt://{username}:{password}@{server}:{port}'
-config.DATABASE_URL = f'bolt://neo4j:{password}@localhost:7687'
+config.DATABASE_URL = f'bolt://{username}:{password}@{server}:{port}'
 
 DATABASES = {
     'default': {
