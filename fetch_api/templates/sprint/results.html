@@ -33,9 +33,9 @@
                         <div class="explain">
                             <span style="display:inline-block;"></span>
                             <ul>
-                            {% for story in stories %}
-                                <li>{{ story.name }}</li>
-                            {% endfor %}
+                                {% for story in stories %}
+                                    <li>{{ story.name }}</li>
+                                {% endfor %}
                             </ul>
                         </div>
 
@@ -49,8 +49,6 @@
                     <a href="{% url 'fetch_api:index' %}">
                         <input type="button" style="float:right" class="btnRegister" value="Home"/>
                     </a>
-
-
                 </div>
 
             </div>

@@ -1,6 +1,6 @@
-from django.shortcuts import render, redirect, reverse
-from fetch_api.forms import SprintForm
+from django.shortcuts import render, redirect
 
+from fetch_api.forms import SprintForm
 from fetch_api.models import Story
 
 
