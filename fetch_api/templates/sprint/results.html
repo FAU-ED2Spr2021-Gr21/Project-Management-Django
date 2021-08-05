@@ -33,12 +33,13 @@
 
                         <div class="explain">
                             <span style="display:inline-block;"></span>
-                            <canvas class="explain" id="explain-canvas"></canvas>
+
                             <ul>
                                 {% for story in stories %}
                                     <li>{{ story.name }}</li>
                                 {% endfor %}
                             </ul>
+
                         </div>
 
                     </div>
@@ -56,6 +57,7 @@
             </div>
         </div>
     </div>
+    <canvas class="explain" id="explain-canvas"></canvas>
     <script src="{% static 'js/diagram.js' %}"></script>
     </body>
 {% endblock %}
