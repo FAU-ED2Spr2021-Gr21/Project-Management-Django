@@ -8,6 +8,7 @@
 
 {% block additional_css %}
     <link href="{% static 'css/results.css' %}" rel="stylesheet"/>
+    <script src="{% static 'js/BinPacking.min.js' %}"></script>
 {% endblock %}
 
 {% block body %}
@@ -32,6 +33,7 @@
 
                         <div class="explain">
                             <span style="display:inline-block;"></span>
+                            <canvas class="explain" id="explain-canvas"></canvas>
                             <ul>
                                 {% for story in stories %}
                                     <li>{{ story.name }}</li>
@@ -54,6 +56,7 @@
             </div>
         </div>
     </div>
+    <script src="{% static 'js/diagram.js' %}"></script>
     </body>
 {% endblock %}
      
