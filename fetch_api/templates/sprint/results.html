@@ -45,7 +45,7 @@
                     </div>
                     <!--This will take you to the Graph html so change the href-->
                     <a href="{% url 'fetch_api:graph' %}">
-                        <input type="button" style="float:right " class="btnRegister" value="Graph"/>
+                        <input type="button" style="float:right " onclick="" class="btnRegister" value="Graph"/>
                     </a>
                     <!--Takes u to the previous page using history.
                         For Graph might want to make -1 into -2 to go back to home page and -1 to go back to results-->
@@ -57,7 +57,7 @@
             </div>
         </div>
     </div>
-    <canvas class="explain" id="explain-canvas"></canvas>
+    
     <script src="{% static 'js/diagram.js' %}"></script>
     </body>
 {% endblock %}
