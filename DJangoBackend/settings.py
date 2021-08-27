@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 from pathlib import Path
 
+import django_heroku
 from neomodel import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -138,3 +139,6 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.JSONRenderer',
     )
 }
+
+# For Heroku deployment
+django_heroku.settings(locals())
